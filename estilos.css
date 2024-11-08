@@ -1,0 +1,104 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.contenedor-grid {
+    display: grid;
+    grid-template-areas:
+        "encabezado"
+        "menu"
+        "hero"
+        "principal"
+        "banner"
+        "extra"
+        "imagen";
+    gap: 10px;
+    padding: 10px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Estilo general para todas las secciones */
+.contenedor-grid > div {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.encabezado {
+    grid-area: encabezado;
+    background-color: #1a1a2e;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #e94560;
+}
+
+.hero {
+    grid-area: hero;
+    background-color: #0f3460;
+}
+
+.principal {
+    grid-area: principal;
+    background-color: #16213e;
+}
+
+.banner {
+    grid-area: banner;
+    background-color: #f6c90e;
+    color: #000;
+}
+
+.extra {
+    grid-area: extra;
+    background-color: #22c1c3;
+    color: #000;
+}
+
+.imagen {
+    grid-area: imagen;
+    background-color: #a1dff7;
+    color: #000;
+}
+
+/* Vista para tablet */
+@media (min-width: 768px) {
+    .contenedor-grid {
+        grid-template-areas:
+            "encabezado encabezado"
+            "hero hero"
+            "menu principal"
+            "banner banner"
+            "extra imagen";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Vista para escritorio */
+@media (min-width: 1024px) {
+    .contenedor-grid {
+        grid-template-areas:
+            "encabezado encabezado menu"
+            "hero hero hero"
+            "principal principal imagen"
+            "banner banner banner"
+            "extra extra extra";
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
